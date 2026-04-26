@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>For Liva 💌</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Lato:wght@300;400&display=swap" rel="stylesheet" />
+  
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <div class="petals-bg" id="petals"></div>
+
+  <section class="hero">
+    <div class="hero-deco">🌸 🌷 🌸</div>
+    <h1 id="hero-name">Liva</h1>
+    <p class="subtitle-en">My favourite adventure</p>
+    <p class="subtitle-de">Du bist mein liebstes Abenteuer</p>
+    <div class="date-badge">
+      <span>💌</span>
+      <span>05 · May · 2026</span>
+      <span>💌</span>
+    </div>
+    <div class="scroll-hint">Scroll</div>
+  </section>
+
+  <section class="music-section">
+    <p class="music-label">♫ Our Song · Unser Lied</p>
+
+    <div class="iphone-frame">
+      <div class="iphone-screen">
+        <div class="iphone-statusbar">
+          <span class="iphone-time">iPhone</span>
+          <div class="iphone-icons">
+            <svg width="16" height="12" viewBox="0 0 16 12" fill="white" opacity=".9">
+              <rect x="0" y="4" width="3" height="8" rx="1"/>
+              <rect x="4.5" y="2.5" width="3" height="9.5" rx="1"/>
+              <rect x="9" y="1" width="3" height="11" rx="1"/>
+              <rect x="13.5" y="0" width="2.5" height="12" rx="1"/>
+            </svg>
+          </div>
+        </div>
+
+        <div class="iphone-album">
+          <iframe 
+            src="https://www.youtube.com/embed/nyuo9-OjNNg?autoplay=0&controls=1&rel=0" 
+            width="100%" 
+            height="100%" 
+            frameborder="0" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+            allowfullscreen
+            style="border-radius: 12px;">
+          </iframe>
+        </div>
+
+        <div class="iphone-info">
+          <div class="iphone-song-row">
+            <div>
+              <div class="iphone-song-title">Wanna Be Yours</div>
+              <div class="iphone-song-artist">Arctic Monkeys</div>
+            </div>
+            <div class="iphone-heart">♥</div>
+          </div>
+        </div>
+
+        <div class="iphone-progress-wrap">
+          <div class="iphone-bar">
+            <div class="iphone-bar-fill" id="progress-fill"></div>
+            <div class="iphone-bar-dot" id="progress-dot"></div>
+          </div>
+          <div class="iphone-times">
+            <span id="time-current">0:00</span>
+            <span id="time-total">-3:04</span>
+          </div>
+        </div>
+
+        <div class="iphone-spotify-link">
+          <a href="https://www.youtube.com/watch?v=nyuo9-OjNNg" target="_blank" style="color: #FF0000;">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" style="margin-right: 4px; vertical-align: middle;">
+              <path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"/>
+            </svg>
+            Open on YouTube
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="section-title reveal">
+    <h2>Our Story</h2>
+    <p>Unsere Geschichte · Tap the cards to read</p>
+  </div>
+
+  <div class="panels">
+
+    <div class="card-scene reveal" onclick="flipCard(this)">
+      <div class="card">
+        <div class="card-front">
+          <div class="photo-area">
+            <img src="img/foto1.jpg" alt="Moment 01" />
+          </div>
+          <div class="card-label">
+            <span class="card-number">01</span>
+            <span class="flip-hint">Open</span>
+          </div>
+        </div>
+        <div class="card-back">
+          <div class="back-deco">🌷</div>
+          <div class="back-title-en">The Day I Found You</div>
+          <div class="back-title-de">Der Tag, an dem ich dich fand</div>
+          <div class="back-divider"></div>
+          <p class="back-text-en">From the very first moment, in that VR chat room where we spent hours together, a part of me knew: you were the person I had been waiting for, even without realizing it. You will always be my princess.</p>
+          <p class="back-text-de">Vom allerersten Moment an, in diesem VRChat-Raum, wo wir Stunden miteinander verbracht haben, wusste ein Teil von mir: Du bist der Mensch, auf den ich gewartet habe, ohne es überhaupt zu ahnen. Du wirst für immer meine Prinzessin bleiben.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="card-scene reveal" onclick="flipCard(this)" style="transition-delay:.1s">
+      <div class="card">
+        <div class="card-front">
+          <div class="photo-area">
+            <img src="img/foto2.jpg" alt="Moment 02" />
+          </div>
+          <div class="card-label">
+            <span class="card-number">02</span>
+            <span class="flip-hint">Open</span>
+          </div>
+        </div>
+        <div class="card-back">
+          <div class="back-deco">✨</div>
+          <div class="back-title-en">The Little Details</div>
+          <div class="back-title-de">Jeder kleine Augenblick</div>
+          <div class="back-divider"></div>
+          <p class="back-text-en">It's not the grand gestures I treasure most, it's the silly laughs, the way we understand each other, and your smile.</p>
+          <p class="back-text-de">Es sind nicht die großen Gesten, die mir am meisten bedeuten, sondern das alberne Lachen, die Art, wie wir uns verstehen, und dein Lächeln.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="card-scene card-wide reveal" onclick="flipCard(this)" style="transition-delay:.2s">
+      <div class="card">
+        <div class="card-front">
+          <div class="photo-area" style="min-height:320px">
+            <img src="img/foto3.jpg" alt="Moment 03" />
+          </div>
+          <div class="card-label">
+            <span class="card-number">03</span>
+            <span class="flip-hint">Open</span>
+          </div>
+        </div>
+        <div class="card-back">
+          <div class="back-deco">🎂</div>
+          <div class="back-title-en">Happy Birthday, my love</div>
+          <div class="back-title-de">Alles Gute zum Geburtstag</div>
+          <p class="back-text-en">The world became a much better place on May 5th. Today I celebrate your day and the miracle of your existence in my life. I want you to enjoy your day, even from afar I will always be rooting for you, for your struggles, victories, and even in defeats I will be by your side to support you. I love you, my love.</p>
+          <p class="back-text-de">Die Welt ist am 5. Mai ein viel besserer Ort geworden. Heute feiere ich deinen Tag und das Wunder, dass es dich in meinem Leben gibt. Ich möchte, dass du deinen Tag in vollen Zügen genießt. Auch aus der Ferne werde ich immer hinter dir stehen – bei deinen Kämpfen, deinen Siegen, und selbst bei Niederlagen werde ich an deiner Seite sein, um dich zu unterstützen. Ich liebe dich, mein Schatz.</p>
+          <div class="back-divider"></div>
+          
+        </div>
+      </div>
+    </div>
+
+    <div class="card-scene reveal" onclick="flipCard(this)" style="transition-delay:.3s">
+      <div class="card">
+        <div class="card-front">
+          <div class="photo-area">
+            <img src="img/foto4.jpg" alt="Moment 04" />
+          </div>
+          <div class="card-label">
+            <span class="card-number">04</span>
+            <span class="flip-hint">Open</span>
+          </div>
+        </div>
+        <div class="card-back">
+          <div class="back-deco">💖</div>
+          <div class="back-title-en">Us Two, Against Everything</div>
+          <div class="back-title-de">Wir zwei, gegen alles</div>
+          <div class="back-divider"></div>
+          <p class="back-text-en">From Brasília to Düsseldorf, the distance is just a number. I will always fight for us both. What we have crosses oceans, because what is real can be felt anywhere. In a while, it will be our quiet apartment, silly laughs, and a peaceful life together.</p>
+          <p class="back-text-de">Von Brasília bis nach Düsseldorf – die Entfernung ist nur eine Zahl. Ich werde immer für uns beide kämpfen. Was wir haben, überquert Ozeane, denn was echt ist, kann man überall spüren. Schon bald werden wir unsere eigene ruhige Wohnung haben, voller albernem Lachen und einem friedlichen Leben zusammen.</p>         
+        </div>
+      </div>
+    </div>
+
+    <div class="card-scene reveal" onclick="flipCard(this)" style="transition-delay:.4s">
+      <div class="card">
+        <div class="card-front">
+          <div class="photo-area">
+            <img src="img/foto5.jpg" alt="Moment 05" />
+          </div>
+          <div class="card-label">
+            <span class="card-number">05</span>
+            <span class="flip-hint">Open</span>
+          </div>
+        </div>
+        <div class="card-back">
+          <div class="back-deco">🦦</div>
+          <div class="back-title-en">Our Future</div>
+          <div class="back-title-de">Für immer beginnt jetzt</div>
+          <div class="back-divider"></div>
+          <p class="back-text-en">I choose you today and in every version of the future. And I promise to be your man forever, no matter the distance.</p>
+          <p class="back-text-de">Ich wähle dich heute und in jeder Version der Zukunft. Und ich verspreche, für immer der Mann an deiner Seite zu sein, ganz egal, wie groß die Entfernung ist.</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <footer class="footer reveal">
+    <div class="heart-big">💗</div>
+    <h3>For Liva, Always. I Love you my baby</h3>
+    <p>With all my love Happy Birthday <3 · 05/05</p>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

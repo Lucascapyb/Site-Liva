@@ -1,0 +1,703 @@
+/* ============================================================
+   LIVA SITE — style.css
+   Paleta: Rosa / Lilás romântico 🌸
+   ============================================================ */
+
+/* ── RESET & VARIABLES ─────────────────────────────────── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --rose:        #f4a7b9;
+  --rose-deep:   #d96b8b;
+  --rose-light:  #fde8ef;
+  --rose-pale:   #fff5f8;
+  --lilac:       #c9a8d4;
+  --lilac-deep:  #9b72b0;
+  --lilac-light: #f0e6f6;
+  --cream:       #fdf6f0;
+  --text-dark:   #3d1f2e;
+  --text-mid:    #7a4a5e;
+  --text-soft:   #b07a90;
+  --gold:        #e8c87a;
+  --gold-deep:   #c4993a;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Lato', sans-serif;
+  background: var(--cream);
+  color: var(--text-dark);
+  overflow-x: hidden;
+}
+
+/* ── FLOATING PETALS ────────────────────────────────────── */
+.petals-bg {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.petal {
+  position: absolute;
+  top: -40px;
+  font-size: 18px;
+  animation: fall linear infinite;
+  opacity: 0.6;
+}
+
+@keyframes fall {
+  0%   { transform: translateY(-40px) rotate(0deg);   opacity: 0.7; }
+  100% { transform: translateY(110vh) rotate(360deg); opacity: 0;   }
+}
+
+/* ── HERO ───────────────────────────────────────────────── */
+.hero {
+  position: relative;
+  z-index: 1;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 2rem;
+  background: linear-gradient(160deg, var(--rose-pale) 0%, var(--lilac-light) 50%, var(--rose-pale) 100%);
+}
+
+.hero-deco {
+  font-size: 3rem;
+  letter-spacing: 1rem;
+  margin-bottom: 1.5rem;
+  animation: floatDeco 3s ease-in-out infinite;
+}
+
+@keyframes floatDeco {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(-10px); }
+}
+
+.hero h1 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(3rem, 10vw, 7rem);
+  font-weight: 300;
+  color: var(--rose-deep);
+  line-height: 1;
+  letter-spacing: -1px;
+  margin-bottom: 0.5rem;
+  animation: fadeUp 1.2s ease both;
+}
+
+.hero .subtitle-en {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(1rem, 3vw, 1.5rem);
+  font-style: italic;
+  color: var(--text-mid);
+  margin-bottom: 0.25rem;
+  animation: fadeUp 1.4s ease both;
+}
+
+.hero .subtitle-de {
+  font-family: 'Lato', sans-serif;
+  font-size: clamp(0.75rem, 2vw, 0.95rem);
+  font-weight: 300;
+  letter-spacing: 0.2em;
+  color: var(--text-soft);
+  text-transform: uppercase;
+  margin-bottom: 2.5rem;
+  animation: fadeUp 1.6s ease both;
+}
+
+.date-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  background: white;
+  border: 1px solid var(--rose);
+  border-radius: 50px;
+  padding: 0.6rem 1.5rem;
+  font-size: 0.9rem;
+  color: var(--rose-deep);
+  letter-spacing: 0.05em;
+  animation: fadeUp 1.8s ease both;
+  margin-bottom: 2rem;
+}
+
+.scroll-hint {
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--text-soft);
+  font-size: 0.75rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  animation: bounce 2s ease-in-out infinite;
+}
+
+.scroll-hint::after {
+  content: '';
+  width: 1px;
+  height: 30px;
+  background: linear-gradient(to bottom, var(--rose), transparent);
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateX(-50%) translateY(0); }
+  50%       { transform: translateX(-50%) translateY(6px); }
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ── MUSIC PLAYER — iPhone Spotify style ───────────────── */
+.music-section {
+  position: relative;
+  z-index: 1;
+  background: linear-gradient(160deg, #2a0a14 0%, #4a1228 50%, #2a0a14 100%);
+  padding: 3rem 2rem 3.5rem;
+  text-align: center;
+}
+
+.music-label {
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.5);
+  margin-bottom: 2rem;
+}
+
+/* iPhone frame */
+.iphone-frame {
+  display: inline-block;
+  background: #1a1a1a;
+  border-radius: 44px;
+  padding: 12px;
+  box-shadow:
+    0 0 0 2px #3a3a3a,
+    0 30px 80px rgba(0,0,0,0.6),
+    0 0 60px rgba(180,50,90,0.3);
+  max-width: 300px;
+  width: 100%;
+}
+
+.iphone-screen {
+  background: linear-gradient(160deg, #3d0d1f 0%, #6b1535 40%, #3d0d1f 100%);
+  border-radius: 34px;
+  padding: 1.25rem 1.5rem 1.5rem;
+  overflow: hidden;
+}
+
+/* Status bar */
+.iphone-statusbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.25rem;
+}
+
+.iphone-time {
+  font-size: 0.75rem;
+  font-weight: 400;
+  color: rgba(255,255,255,0.9);
+  letter-spacing: 0.05em;
+}
+
+.iphone-icons {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* Album art */
+.iphone-album {
+  width: 100%;
+  aspect-ratio: 1;
+  border-radius: 12px;
+  overflow: hidden;
+  margin-bottom: 1.25rem;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.5);
+  background: linear-gradient(135deg, #c2185b, #880e4f);
+}
+
+.iphone-album img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Song info */
+.iphone-info { margin-bottom: 1rem; }
+
+.iphone-song-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 0.5rem;
+}
+
+.iphone-song-title {
+  font-family: 'Lato', sans-serif;
+  font-weight: 400;
+  font-size: 1.05rem;
+  color: white;
+  margin-bottom: 0.2rem;
+  text-align: left;
+}
+
+.iphone-song-artist {
+  font-size: 0.78rem;
+  color: rgba(255,255,255,0.55);
+  text-align: left;
+  line-height: 1.4;
+}
+
+.iphone-heart {
+  font-size: 1.1rem;
+  color: #1DB954;
+  flex-shrink: 0;
+  padding-top: 2px;
+}
+
+/* Progress bar */
+.iphone-progress-wrap { margin-bottom: 1.25rem; }
+
+.iphone-bar {
+  position: relative;
+  height: 3px;
+  background: rgba(255,255,255,0.2);
+  border-radius: 2px;
+  margin-bottom: 0.5rem;
+  cursor: pointer;
+}
+
+.iphone-bar-fill {
+  position: absolute;
+  left: 0; top: 0;
+  height: 100%;
+  width: 8%;
+  background: white;
+  border-radius: 2px;
+  transition: width 1s linear;
+}
+
+.iphone-bar-dot {
+  position: absolute;
+  top: 50%;
+  left: 8%;
+  transform: translate(-50%, -50%);
+  width: 10px;
+  height: 10px;
+  background: white;
+  border-radius: 50%;
+  transition: left 1s linear;
+}
+
+.iphone-times {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.7rem;
+  color: rgba(255,255,255,0.5);
+}
+
+/* Controls */
+.iphone-controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.25rem;
+  padding: 0 0.5rem;
+}
+
+.iphone-ctrl {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.6rem;
+  cursor: pointer;
+  padding: 0.25rem 0.5rem;
+  opacity: 0.9;
+  transition: opacity 0.2s, transform 0.15s;
+  line-height: 1;
+}
+
+.iphone-ctrl:hover   { opacity: 1; transform: scale(1.1); }
+.iphone-play         { font-size: 2.2rem; }
+
+/* Volume */
+.iphone-bottom {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-bottom: 1rem;
+}
+
+.iphone-vol-icon { font-size: 0.85rem; color: rgba(255,255,255,0.5); }
+
+.iphone-vol-bar {
+  flex: 1;
+  height: 3px;
+  background: rgba(255,255,255,0.2);
+  border-radius: 2px;
+}
+
+.iphone-vol-fill {
+  height: 100%;
+  width: 65%;
+  background: rgba(255,255,255,0.7);
+  border-radius: 2px;
+}
+
+/* Spotify real embed below iPhone */
+.spotify-embed-wrap {
+  max-width: 300px;
+  margin: 1.25rem auto 0;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+}
+
+/* Spotify link */
+.iphone-spotify-link {
+  text-align: center;
+}
+
+.iphone-spotify-link a {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.72rem;
+  color: rgba(255,255,255,0.45);
+  text-decoration: none;
+  letter-spacing: 0.08em;
+  transition: color 0.2s;
+}
+
+.iphone-spotify-link a:hover { color: #1DB954; }
+
+/* ── SECTION TITLE ──────────────────────────────────────── */
+.section-title {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  padding: 4rem 2rem 2rem;
+}
+
+.section-title h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(2rem, 6vw, 3.5rem);
+  font-weight: 300;
+  color: var(--rose-deep);
+  margin-bottom: 0.25rem;
+}
+
+.section-title p {
+  font-size: 0.8rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--text-soft);
+}
+
+/* ── PANELS GRID ────────────────────────────────────────── */
+.panels {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  padding: 1rem 2rem 4rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Card 03 spans 2 columns on wide screens */
+@media (min-width: 900px) {
+  .card-wide { grid-column: span 2; }
+}
+
+/* ── CARD (ENVELOPE FLIP) ───────────────────────────────── */
+.card-scene {
+  perspective: 1000px;
+  cursor: pointer;
+  border-radius: 20px;
+}
+
+.card {
+  position: relative;
+  width: 100%;
+  min-height: 480px; /* Aumentado para acomodar textos longos */
+  transform-style: preserve-3d;
+  transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  border-radius: 20px;
+}
+
+.card.flipped { transform: rotateY(180deg); }
+
+.card-front,
+.card-back {
+  position: absolute;
+  inset: 0;
+  backface-visibility: hidden;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.card-back { transform: rotateY(180deg); }
+
+/* FRONT */
+.card-front {
+  background: var(--rose-light);
+  display: flex;
+  flex-direction: column;
+}
+
+.photo-area {
+  flex: 1;
+  background: linear-gradient(135deg, var(--rose-light), var(--lilac-light));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+  min-height: 280px;
+}
+
+.photo-area img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  inset: 0;
+}
+
+.photo-placeholder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--text-soft);
+  font-size: 0.8rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  text-align: center;
+  padding: 1rem;
+  z-index: 1;
+}
+
+.photo-placeholder .icon {
+  font-size: 2.5rem;
+  opacity: 0.5;
+}
+
+.card-label {
+  padding: 1rem 1.25rem;
+  background: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.card-number {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.5rem;
+  font-weight: 300;
+  color: var(--rose-deep);
+  line-height: 1;
+}
+
+.flip-hint {
+  font-size: 0.7rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--text-soft);
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.flip-hint::after {
+  content: '💌';
+  font-size: 1rem;
+  animation: pulse 1.5s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50%       { transform: scale(1.2); }
+}
+
+/* Photo upload button */
+.photo-upload-label {
+  position: absolute;
+  bottom: 0.75rem;
+  right: 0.75rem;
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid var(--rose);
+  border-radius: 50px;
+  padding: 0.35rem 0.85rem;
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--rose-deep);
+  cursor: pointer;
+  transition: background 0.2s;
+  z-index: 2;
+}
+
+.photo-upload-label:hover { background: white; }
+
+.photo-upload-input { display: none; }
+
+/* BACK */
+.card-back {
+  background: white;
+  border: 2px solid var(--rose-light);
+  display: flex;
+  flex-direction: column;
+  padding: 2rem 1.5rem; /* Ajuste para dar espaço à barra de rolagem */
+  justify-content: center;
+  overflow-y: auto; /* Permite rolar textos grandes */
+}
+
+/* Scrollbar romântica e invisível */
+.card-back::-webkit-scrollbar {
+  width: 6px;
+}
+.card-back::-webkit-scrollbar-track {
+  background: transparent;
+}
+.card-back::-webkit-scrollbar-thumb {
+  background: var(--rose-light);
+  border-radius: 10px;
+}
+
+.back-deco {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.back-title-en {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(1.3rem, 4vw, 1.6rem); /* Responsivo */
+  font-weight: 400;
+  font-style: italic;
+  color: var(--rose-deep);
+  margin-bottom: 0.4rem;
+  text-align: center;
+}
+
+.back-title-de {
+  font-size: clamp(0.65rem, 2vw, 0.7rem); /* Responsivo */
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--text-soft);
+  margin-bottom: 1.25rem;
+  text-align: center;
+}
+
+.back-divider {
+  width: 40px;
+  height: 1px;
+  background: var(--rose);
+  margin: 0 auto 1.25rem;
+}
+
+.back-text-en {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(1rem, 3vw, 1.15rem); /* Responsivo */
+  font-style: italic;
+  color: var(--text-mid);
+  line-height: 1.7;
+  margin-bottom: 0.75rem;
+  text-align: center;
+}
+
+.back-text-de {
+  font-size: clamp(0.8rem, 2.5vw, 0.9rem); /* Responsivo */
+  color: var(--text-soft);
+  line-height: 1.6;
+  font-weight: 300;
+  text-align: center;
+}
+
+.flip-back-hint {
+  text-align: center;
+  margin-top: 1.5rem;
+  font-size: 0.7rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--rose);
+}
+
+/* ── FOOTER ─────────────────────────────────────────────── */
+.footer {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  padding: 4rem 2rem;
+  background: linear-gradient(160deg, var(--rose-pale), var(--lilac-light));
+}
+
+.footer h3 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(1.8rem, 5vw, 3rem);
+  font-weight: 300;
+  color: var(--rose-deep);
+  margin-bottom: 0.5rem;
+}
+
+.footer p {
+  font-size: 0.85rem;
+  color: var(--text-soft);
+  letter-spacing: 0.1em;
+  margin-bottom: 2rem;
+}
+
+.heart-big {
+  font-size: 3rem;
+  animation: heartbeat 1.2s ease-in-out infinite;
+  display: inline-block;
+  margin-bottom: 1rem;
+}
+
+@keyframes heartbeat {
+  0%,  100% { transform: scale(1); }
+  14%        { transform: scale(1.2); }
+  28%        { transform: scale(1); }
+  42%        { transform: scale(1.15); }
+  56%        { transform: scale(1); }
+}
+
+/* ── SCROLL REVEAL ──────────────────────────────────────── */
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: none;
+}
+
+/* ── RESPONSIVE ─────────────────────────────────────────── */
+@media (max-width: 600px) {
+  .panels { padding: 1rem 1rem 3rem; gap: 1.25rem; }
+  .hero-deco { font-size: 2rem; letter-spacing: 0.5rem; }
+  .card { min-height: 420px; } /* Aumentado para o mobile */
+}
